@@ -57,7 +57,7 @@ function setup() {
 
 async function draw() {
   background(32);
-  fill(255, 100, 25);
+  fill(163, 73, 164);
   textSize(100);
 
   if(simpleTimer.expired()){
