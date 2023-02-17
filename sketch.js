@@ -28,7 +28,7 @@ function drawLetters(){
   }
 
   if(messageX < -400){
-    simpleTimer.setTimer(randomNumber(10,30) * 1000);
+    simpleTimer.setTimer(randomNumber(5,10) * 1000);
     simpleTimer.start();
     messageX = windowWidth;
   }
@@ -50,7 +50,7 @@ function setup() {
   messageX = width;
   frameRate(40);
 
-  simpleTimer = new Timer(randomNumber(10,30) * 1000);
+  simpleTimer = new Timer(randomNumber(10,15) * 1000);
   simpleTimer.start();
 
 }
