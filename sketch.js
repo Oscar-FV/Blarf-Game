@@ -6,6 +6,7 @@ const ySpeed = 0.05;
 const amplitude = 100;
 const verticalLetterSpacing = 10;
 let font;
+let sound;
 
 var simpleTimer;
 var letterTimer;
@@ -28,7 +29,7 @@ function drawLetters(){
   }
 
   if(messageX < -400){
-    simpleTimer.setTimer(randomNumber(5,10) * 1000);
+    simpleTimer.setTimer(randomNumber(10,15) * 1000);
     simpleTimer.start();
     messageX = windowWidth;
   }
@@ -41,6 +42,8 @@ function randomNumber(min, max) {
 
 function preload() {
   font = loadFont('fonts/PentagramExtended.ttf');
+  sound = loadSound('sound/blarf.mp3');
+  sound.playMode('untilDone');
 }
 
 function setup() {
@@ -61,6 +64,7 @@ async function draw() {
   textSize(100);
 
   if(simpleTimer.expired()){
+    sound.play();
     drawLetters();
   }
   
