@@ -29,7 +29,7 @@ function drawLetters(){
   }
 
   if(messageX < -400){
-    simpleTimer.setTimer(randomNumber(10,15) * 1000);
+    simpleTimer.setTimer(randomNumber(20,30) * 1000);
     simpleTimer.start();
     messageX = windowWidth;
   }
@@ -42,8 +42,6 @@ function randomNumber(min, max) {
 
 function preload() {
   font = loadFont('fonts/PentagramExtended.ttf');
-  sound = loadSound('sound/blarf.mp3');
-  sound.playMode('untilDone');
 }
 
 function setup() {
@@ -52,6 +50,9 @@ function setup() {
   xSpeed = map(windowWidth, 540, 2000, 8, 10);
   messageX = width;
   frameRate(40);
+
+  sound = loadSound('sound/blarf.mp3');
+  sound.playMode('untilDone');
 
   simpleTimer = new Timer(randomNumber(10,15) * 1000);
   simpleTimer.start();
